@@ -18,7 +18,7 @@ function main()
   endfor;
   
   #processando a imagem relativa a fatia # 13
-  figure;imagesc(abs(fft2(rawdata(:, :, 12))));
+  figure;imagesc(abs(fft2(rawdata(:, :, 12), 128, 128)));
   
   
   
