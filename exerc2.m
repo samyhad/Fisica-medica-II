@@ -34,7 +34,7 @@ function exerc2()
     daspect ([1 1]); #permitindo que a imagem permaneça com a proporção original
   
   subplot (2,2,3); #plotando a 3º imagem
-    imagesc(abs(fftshift(fft2(gap4(:, :), 128, 128), 1))); #Imagem reconstruida que veio do espaço-k sub-amostrado a cada 2 linhas
+    imagesc(abs(fftshift(fft2(gap2(:, :), 128, 128), 1))); #Imagem reconstruida que veio do espaço-k sub-amostrado a cada 2 linhas
     title ({"Imagem reconstruida que veio do espaço-k";"sub-amostrado a cada 2 linhas"}, "fontsize", 10); #Título dessa imagem
     daspect ([1 1]); #permitindo que a imagem permaneça com a proporção original
     
