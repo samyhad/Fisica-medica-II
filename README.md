@@ -1,7 +1,7 @@
 # Fisica-medica-II
 Trabalho da disciplina de Física médica II, ministrada no 3° quadrimestre de 2021 pelo professor Daniel Papoti.
 
-# Instruções
+## Instruções
 Para as questões a seguir, utilize o conjunto de dados de MRI no espaço-k disponibilizados no site do Tidia (“rawdata.m" & “spikes.m“). Os dados nesta matriz estão organizados da seguinte forma: Nleitura x Nfase x Nfatias. Note que para os dados “spikes“, existe somente 1 fatia disponível.
 1) Escreva uma função em Matlab que seja capaz de reconstruir os dados do espaço-k para o espaço da imagem. Documente cada linha 
 da sua função, explicando cada passo. Plote, usando a função “imagesc“ em escala de cinzas (“colormap gray“), espaço-k (magnitude) original e suas respectivas imagens reconstruídas (magnitude), para os slices no 6, 10, 14, 18 e 22. Dica: Para plotar as 
