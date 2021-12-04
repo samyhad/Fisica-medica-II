@@ -20,30 +20,32 @@ function exerc2()
   
   colormap (gray); #colocando a imagem em escala cinza
   
-  gap2 = rawdata(1:2:128, :); #Matriz com um espaço-k sub-amostrado a cada 2 linhas
-  gap4 = rawdata(1:4:128, :); #Matriz com um espaço-k sub-amostrado a cada 4 linhas
+  for(linha = 1:2:128) # loop para percorrer as linhas (um "pulo" de 2 linhas)
+       gap2(linha, :) = rawdata(linha, :); #preenchendo a matriz com os valores do espaço k
+  endfor;
+  for(linha = 1:4:128) # loop para percorrer as linhas (um "pulo" de 2 linhas)
+       gap4(linha, :) = rawdata(linha, :); #preenchendo a matriz com os valores do espaço k
+  endfor;
   
   subplot (2,2,1); #plotando a 1º imagem
-    imagesc(abs(fft2(gap2(:, :), 128, 128))); #Imagem que veio do espaço-k sub-amostrado a cada 2 linhas
-    title ({"Imagem que veio do espaço-k";"sub-amostrado a cada 2 linhas"}, "fontsize", 10); #Título dessa imagem
+    imagesc(abs(gap2(:, :))); #Imagem do espaço-k sub-amostrado a cada 2 linhas
+    title ({"espaço-k";"sub-amostrado a cada 2 linhas"}, "fontsize", 10); #Título dessa imagem
     daspect ([1 1]); #permitindo que a imagem permaneça com a proporção original
   
   subplot (2,2,2); #plotando a 2º imagem
-    imagesc(abs(fft2(gap4(:, :), 128, 128))); #Imagem que veio do espaço-k sub-amostrado a cada 4 linhas
-    title ({"Imagem que veio do espaço-k";"sub-amostrado a cada 4 linhas"}, "fontsize", 10); #Título dessa imagem
+    imagesc(abs(gap4(:, :))); #Imagem do espaço-k sub-amostrado a cada 4 linhas
+    title ({"espaço-k";"sub-amostrado a cada 4 linhas"}, "fontsize", 10); #Título dessa imagem
     daspect ([1 1]); #permitindo que a imagem permaneça com a proporção original
   
   subplot (2,2,3); #plotando a 3º imagem
-    imagesc(abs(fftshift(fft2(gap2(:, :), 128, 128), 1))); #Imagem reconstruida que veio do espaço-k sub-amostrado a cada 2 linhas
-    title ({"Imagem reconstruida que veio do espaço-k";"sub-amostrado a cada 2 linhas"}, "fontsize", 10); #Título dessa imagem
+    imagesc(abs(fft2(gap2(:, :), 128, 128))); #Imagem que veio do espaço-k sub-amostrado a cada 2 linhas
+    title ({"MRI do espaço-k";"sub-amostrado a cada 2 linhas"}, "fontsize", 10); #Título dessa imagem
     daspect ([1 1]); #permitindo que a imagem permaneça com a proporção original
-    
+  
   subplot (2,2,4); #plotando a 4º imagem
-    imagesc(abs(fftshift(fft2(gap4(:, :), 128, 128), 1))); #Imagem reconstruida que veio do espaço-k sub-amostrado a cada 4 linhas
-    title ({"Imagem reconstruida que veio do espaço-k";"sub-amostrado a cada 4 linhas"}, "fontsize", 10); #Título dessa imagem
+    imagesc(abs(fft2(gap4(:, :), 128, 128))); #Imagem que veio do espaço-k sub-amostrado a cada 4 linhas
+    title ({"MRI do espaço-k";"sub-amostrado a cada 4 linhas"}, "fontsize", 10); #Título dessa imagem
     daspect ([1 1]); #permitindo que a imagem permaneça com a proporção original
-  
-  
   
   
 endfunction
